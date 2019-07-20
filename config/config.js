@@ -2,7 +2,7 @@
 const databases1= {
     databases : {
         postgres: {
-            database: 'test',
+            database: 'User',
             username: 'postgres',
             password: 'password-1',
             host: 'localhost',
