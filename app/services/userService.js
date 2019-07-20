@@ -9,7 +9,7 @@ const userSequelizervice = () => {
   logger.info(EVTC, 'Initialized User Service');
   const sequelize = SequelizeUtil(config, logger).getConnection();
 
-  const User = sequelize.define('user', {
+  const User = sequelize.define('login', {
   // Sequelize.STRING,  Sequelize.DATE, Sequelize.BIGINT , Sequelize.JSON
         id: {
             type: Sequelize.BIGINT,
@@ -36,7 +36,8 @@ const userSequelizervice = () => {
             field: 'lst_updt_ts',
             defaultValue: sequelize.literal('NOW()'),
             timestamps: true }
-	});
+    });
+    
   User.schema(config.databases.postgres.schema);
     // Entity based code
     function getUsers() {
@@ -60,8 +61,7 @@ const userSequelizervice = () => {
             password: req.body.password,
             createdAt: sequelize.literal('NOW()'),
             modifiedAt: sequelize.literal('NOW()'),
-        },
-        );
+        });
     }
 
     function updateUser(req) {
@@ -73,7 +73,7 @@ const userSequelizervice = () => {
         },
         { where: {
             id: req.body.id,
-        },
+            },
         });
     }
 

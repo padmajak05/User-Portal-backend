@@ -95,9 +95,7 @@ function deleteUser(req) {
 
 function getData(req) {
     var data = dataService(req);
-    logger.info("----------------------", data);
     return data.then(function (data1) {
-        logger.info("Data...........................", data1);
         return data1;
     }).catch(function (error) {
         logger.info(EVTC, 'error while fetching data>> %s', JSON.stringify(error));

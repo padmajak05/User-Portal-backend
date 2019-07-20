@@ -11,7 +11,7 @@ var userSequelizervice = function userSequelizervice() {
     logger.info(EVTC, 'Initialized User Service');
     var sequelize = SequelizeUtil(config, logger).getConnection();
 
-    var User = sequelize.define('user', {
+    var User = sequelize.define('login', {
         // Sequelize.STRING,  Sequelize.DATE, Sequelize.BIGINT , Sequelize.JSON
         id: {
             type: Sequelize.BIGINT,

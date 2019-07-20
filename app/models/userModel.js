@@ -20,6 +20,7 @@ export function getUsers(req) {
     });
     return data;
 }
+
 export function getUser(id) {
     const userService1 = userService();
     let data;
@@ -36,6 +37,7 @@ export function getUser(id) {
         logger.info(EVTC, 'error >> %s', JSON.stringify(error));
     });
 }
+
 export function createUser(req) {
     const userService1 = userService();
     const promise = new Promise((resolve,reject)=> {
@@ -84,9 +86,7 @@ export function deleteUser(req) {
 
 export function getData(req) {
     const data = dataService(req);
-    logger.info("----------------------",data);
     return data.then((data1) => {
-        logger.info("Data...........................",data1);
         return data1;
     }).catch((error) => {
         logger.info(EVTC, 'error while fetching data>> %s', JSON.stringify(error));

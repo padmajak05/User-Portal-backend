@@ -37,4 +37,5 @@ const sequelizeUtil = (config, logger) => {
         getConnection,
     };
 };
+
 module.exports = sequelizeUtil;
